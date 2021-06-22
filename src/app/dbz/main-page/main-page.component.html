@@ -6,24 +6,18 @@
 <div class="row">
 
     <div class="col">
-        <h3>Personajes</h3>
-        <hr>
-        <ul *ngFor="let person of personajes">
-            <li> {{person.nombre}} - {{person.poder | number}}</li>
-        </ul>
+        <app-personajes></app-personajes>
     </div>
 
     <br>
 
     <div class="col">
-        <h3>Agregar</h3>
-        <hr>
 
-        <form (ngSubmit)="agregar()">
-            <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nuevo.nombre">
-            <input type="number" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder">
-            <button type="submit">Agregar</button>
-        </form>
+        <!-- se recibe el parametro -->
+        <!-- luego se captura el evento y se emite el parámetro -->
+        <app-agregar 
+        [nuevo]="nuevo"
+        ></app-agregar>
 
     </div>
 
